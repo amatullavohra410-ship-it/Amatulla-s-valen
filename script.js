@@ -86,14 +86,13 @@ function onYouTubeIframeAPIReady() {
             autoplay: 1,
             controls: 0,
             rel: 0,
-            mute: 1,
             loop: 1,
             playlist: 'gDlp7Oji95k',
             modestbranding: 1
         },
         events: {
             onReady: function(e){
-                try{ e.target.playVideo(); }catch(e){}
+                try{ e.target.mute(); e.target.playVideo(); }catch(err){}
             }
         }
     });
