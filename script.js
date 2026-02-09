@@ -15,10 +15,11 @@ envelope.addEventListener("click", () => {
     envelope.style.display = "none";
     letter.style.display = "flex";
 
+    // Play background music immediately on the click (keeps the user gesture intact)
+    try{ playMusic(); }catch(e){}
+
     setTimeout( () => {
         document.querySelector(".letter-window").classList.add("open");
-        // Play background music when the envelope is opened (user gesture)
-        try{ playMusic(); }catch(e){}
     },50);
 });
 
